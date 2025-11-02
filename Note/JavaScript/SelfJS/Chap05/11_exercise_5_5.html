@@ -1,0 +1,14 @@
+<script>
+    try {
+        let greeting = "Hello.";
+        // greeting = 1;
+
+        if ( typeof greeting !== "string" ) {
+            throw "不正なデータ型です。"
+        }
+
+        console.log( greeting );
+    } catch ( e ) {
+        console.error( e );
+    }
+</script>

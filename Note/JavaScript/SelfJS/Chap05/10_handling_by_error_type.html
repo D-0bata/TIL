@@ -1,0 +1,16 @@
+<script>
+    try {
+        // 数値に対して文字列のメソッドであるtoUpperCaseを呼んだ場合（TypeErrorが発生）。
+        const num = 1;
+        num.toUpperCase();
+
+        // 存在しない変数val2を参照した場合（ReferenceErrorが発生）。
+        let val1 = val2 + 1;
+    } catch ( error ) {
+        if (error instanceof TypeError ) {
+            console.error( "TypeErrorが発生した時の処理" );
+        } else if ( error instanceof ReferenceError ) {
+            console.error( "ReferenceErrorが発生した時の処理" );
+        }
+    }
+</script>
