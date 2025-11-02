@@ -1,0 +1,11 @@
+@charset "UTF-8";
+.container {
+    display: flex;
+    justify-content: center;
+}
+.box {
+    background: #aef;
+    width: 400px;
+    padding: 2rem;
+    margin: 1rem;
+}
