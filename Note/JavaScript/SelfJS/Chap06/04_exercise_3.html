@@ -1,0 +1,19 @@
+<script>
+    function hello1(){
+        return "Hello world";
+    }
+
+    let val = hello1();
+    console.log(val);
+
+    function hello2(personName){
+        if(typeof personName === 'string'){
+            console.log(`こんにちは、${personName}`);
+        }else{
+            console.log("引数に文字列を渡してください。");
+        }
+    }
+    let personName = "John";
+    hello2(personName);
+    hello2(1);
+</script>

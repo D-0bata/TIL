@@ -1,0 +1,12 @@
+<script type="module">
+    function calcAndDisp(callbackCalc, callbackDisp, val1, val2){
+        const result = callbackCalc(val1, val2);
+        callbackDisp(result);
+    }
+
+    function add(val1, val2){return val1 + val2}
+    function minus(val1, val2){return val1 - val2}
+
+    calcAndDisp(add, console.log, 3, 2);
+    calcAndDisp(minus, alert, 3, 2);
+</script>

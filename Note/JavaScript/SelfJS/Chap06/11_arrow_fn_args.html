@@ -1,0 +1,10 @@
+<script type="module">
+    let hello = function(){
+        console.log("hello, " + arguments[0]);
+    }
+    hello("独習太郎");
+
+    // アロー関数：Uncaught ReferenceError: arguments is not definedが発生する。
+    // let hi = () => console.log("hi, " + arguments[0]);
+    // hi("独習太郎");
+</script>
