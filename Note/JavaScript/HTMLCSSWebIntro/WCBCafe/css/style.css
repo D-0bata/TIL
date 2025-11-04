@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-/* 共通部分 */
+/* 共通部分 ------------------------------ */
 html {
     font-size: 100%;
 }
@@ -32,7 +32,8 @@ img {
     font-weight: normal;
 }
 .page-title,
-.heading-large {
+.heading-large,
+.heading-medium {
     font-size: 3rem;
     text-align: center;
 }
@@ -58,7 +59,7 @@ img {
     scale: 1.2;
 }
 
-/* ヘッダー */
+/* ヘッダー ------------------------------ */
 .page-header {
     padding-top: .5rem;
 }
@@ -79,17 +80,23 @@ img {
     color: #0bd;
 }
 
-/* 背景 */
+/* ヘッダーカバー画像 ------------------------------ */
 .cover {
     background-size: cover;
     background-position: center bottom;
     height: 800px;
 }
+.sub-cover {
+     background-size: cover;
+     background-position: center bottom;
+     height: 528px;
+     margin-bottom: 4rem;
+}
+
+/* HOME ------------------------------ */
 .cover-home {
     background-image: url(../images/cover-home-s.webp);
 }
-
-/* カフェについて */
 .about {
     max-width: 736px;
     padding: 0 1.5rem;
@@ -99,7 +106,70 @@ img {
     margin-bottom: 3rem;
 }
 
-/* フッター */
+/* NEWS ------------------------------ */
+.cover-news {
+    background-image: url(../images/cover-news-s.webp);
+}
+
+/* 記事部分 */
+.post {
+    margin-bottom: 3rem;
+}
+.post-title {
+    font-weight: normal;
+    margin-bottom: 1.25rem;
+}
+.post-info {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+.post-cat {
+    display: flex;
+    gap: .5rem;
+    list-style: none;
+}
+.post-cat a {
+    color: #432;
+    background-color: #faf7f0;
+    border-radius: 8px;
+    font-size: .875rem;
+    padding: .5rem .75rem;
+}
+.post-cat a:hover {
+    background-color: #c9c2bc;
+}
+.post-date {
+    font-size: .875rem;
+}
+.post-thumbnail {
+    border-radius: 16px;
+    margin-bottom: 1.5rem;
+}
+.post p {
+    margin-bottom: 1.5rem;
+    line-height: 2;
+}
+
+/* サイドバー */
+.side-menu {
+    list-style: none;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+.side-menu li {
+    border-bottom: 1px solid #c9c2bc;
+}
+.side-menu a {
+    color: #432;
+    display: block;
+    padding: 1rem;
+}
+.side-menu a:hover {
+    color: #0bd;
+}
+
+/* フッター ------------------------------ */
 .page-footer {
     background-image: url(../images/footer-s.webp);
     background-size: cover;
@@ -135,7 +205,7 @@ img {
     color: #fff;
 }
 
-/* デスクトップ版 */
+/* デスクトップ版 ------------------------------ */
 @media (min-width: 800px) {
     /* 見出し */
     .page-title {
@@ -143,6 +213,11 @@ img {
     }
     .heading-large {
         font-size: 4rem;
+    }
+    .post-title {
+        font-size {
+            font-size: 2rem;
+        }
     }
 
     /* ヘッダー */
@@ -154,6 +229,11 @@ img {
     .main-nav {
         font-size: 2rem;
     }
+    /* ヘッダーカバー画像 */
+    .sub-cover {
+        height: 400px;
+        margin-bottom: 6rem;
+    }
 
     /* HOME */
     .cover-home {
@@ -161,6 +241,25 @@ img {
     }
     .about {
         margin: 4rem auto 0;
+    }
+
+    /* NEWS */
+    .cover-news {
+        background-image: url(../images/cover-news-l.webp);
+    }
+    .news-contents {
+        display: flex;
+        justify-content: space-between;
+    }
+    .post {
+        width: 70%;
+    }
+    .sidebar {
+        width: 22%;
+    }
+    .sidebar .heading-medium {
+        line-height: 1;
+        margin-bottom: 1rem;
     }
 
     /* フッター */
