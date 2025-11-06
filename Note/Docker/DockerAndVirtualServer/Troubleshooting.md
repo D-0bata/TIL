@@ -16,3 +16,7 @@ latest: Pulling from library/httpd
 Digest: sha256:ecfd5ca1bfe1fc5e44a5836c5188bde7f397b50c7a5bb603a017543e29948a01
 Status: Downloaded newer image for httpd:latest
 b8ffe4d14f677ee860a375d1668a9f68773d75974d07410935b7b453a1d48d80
+
+### Apache Webサーバーにアクセスできない（プロトコルをhttpsからhttpに変更して解決）。
+- 誤：https://localhost:8080/
+- 正：http://localhost:8080/
