@@ -37,3 +37,67 @@ total 40
 $ exit
 logout
 Connection to XXX.XXX.XXX.XXX closed.
+
+
+
+### 多段接続を行いたい（~/.ssh/configを作成し、下記の通り設定することで解決）。
+% cat ~/.ssh/config
+Host XXX
+    Hostname XXX.XXX.XXX.XXX
+    User XXX
+    IdentityFile ~/.ssh/XXX.pem
+
+Host YYY
+    Hostname YYY.YYY.YYY.YYY
+    User YYY
+    IdentityFile ~/.ssh/YYY.pem
+    ProxyCommand ssh XXX -W %h:%p
+
+
+Host ZZZ
+    Hostname ZZZ.ZZZ.ZZZ.ZZZ
+    User ZZZ
+    IdentityFile ~/.ssh/ZZZ.pem
+    ProxyCommand ssh XXX -W %h:%p
+
+% ssh YYY
+The authenticity of host 'YYY.YYY.YYY.YYY (<no hostip for proxy command>)' can't be established.
+ED25519 key fingerprint is SHA256:YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'YYY.YYY.YYY.YYY' (ED25519) to the list of known hosts.
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+
+$ exit
+logout
+Connection to YYY.YYY.YYY.YYY closed.
+
+% ssh ZZZ
+The authenticity of host 'ZZZ.ZZZ.ZZZ.ZZZ (<no hostip for proxy command>)' can't be established.
+ED25519 key fingerprint is SHA256:ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'ZZZ.ZZZ.ZZZ.ZZZ' (ED25519) to the list of known hosts.
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+
+$ exit
+logout
+Connection to ZZZ.ZZZ.ZZZ.ZZZ closed.
